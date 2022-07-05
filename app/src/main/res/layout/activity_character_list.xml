@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:padding="8dp"
+    tools:context=".presenter.CharacterList">
+
+    <ImageView
+        android:id="@+id/iv_valorant_logo"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:elevation="24dp"
+        android:src="@drawable/valorant_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alata"
+        android:text="Agentes"
+        android:textColor="@color/main_red"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_valorant_logo"
+        app:layout_constraintStart_toEndOf="@+id/iv_valorant_logo"
+        app:layout_constraintTop_toTopOf="@id/iv_valorant_logo" />
+
+    <ImageView
+        android:id="@+id/iv_search"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="18dp"
+        android:elevation="24dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_agents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_valorant_logo"
+        tools:listitem="@layout/card_agent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
