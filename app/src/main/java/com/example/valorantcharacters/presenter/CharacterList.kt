@@ -1,9 +1,11 @@
 package com.example.valorantcharacters.presenter
 
 import Agent
+import Datum
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.valorantcharacters.R
+import com.example.valorantcharacters.AgentInfo
 import com.example.valorantcharacters.data.AgentRepository
 import com.example.valorantcharacters.databinding.ActivityCharacterListBinding
 import com.example.valorantcharacters.framework.viewmodel.AgentViewModel
@@ -27,6 +29,7 @@ class CharacterList : AppCompatActivity(), AgenteItemInferface {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+
         initRecycler()
         initObserver()
     }
@@ -37,6 +40,7 @@ class CharacterList : AppCompatActivity(), AgenteItemInferface {
             if (it != null) {
                 if (it.data?.isNotEmpty() == true) {
                     agentAdapter.updateList(it)
+                    listAgent = it.data!!
                 }
             }
         }
@@ -44,6 +48,15 @@ class CharacterList : AppCompatActivity(), AgenteItemInferface {
 
     private fun initRecycler() {
         binding.rcvAgents.adapter = agentAdapter
+    }
+
+    override fun showAgentInfo(idAgent: Int) {
+        startActivity(Intent(this, AgentInfo::class.java).putExtra(AGENT_ID_LIST, idAgent))
+    }
+
+    companion object {
+        const val AGENT_ID_LIST = "AGENT_ID"
+        var listAgent = arrayListOf<Datum>()
     }
 
 }

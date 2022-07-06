@@ -50,6 +50,9 @@ class AgentAdapter(
                 .into(binding.ivAbility4)
         }
 
+        binding.root.setOnClickListener {
+            agentItemInterface.showAgentInfo(position)
+        }
     }
 
     override fun getItemCount(): Int = listAgents.data?.size ?: 0

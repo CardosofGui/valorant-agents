@@ -4,6 +4,157 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical"
     tools:context=".AgentInfo">
+
+    <ImageButton
+        android:id="@+id/ib_close_agent"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:background="?actionBarItemBackground"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/main_red" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_agent"
+            android:layout_width="360dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:minHeight="360dp"
+            android:src="@drawable/mockup_full_agent"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.73"
+            android:background="@drawable/background_rounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_agent">
+
+            <ImageButton
+                android:id="@+id/ib_start_sound"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="?actionBarItemBackground"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_volume_up_24"
+                app:layout_constraintEnd_toEndOf="@+id/view"
+                app:layout_constraintTop_toTopOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/tv_agent_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/alata"
+                android:text="Fade"
+                android:textColor="@color/main_background"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/view"
+                app:layout_constraintTop_toTopOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/tv_agent_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/alata"
+                android:text="Fade, uma caçadora de recompensas turca, usa o poder dos pesadelos para capturar os segredos dos inimigos. Personificando o próprio terror, ela persegue os alvos e revela seus medos mais profundos para, depois, destruí-los na escuridão."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/tv_agent_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_agent_name" />
+
+            <TextView
+                android:id="@+id/tv_abilty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/alata"
+                android:text="Habilidades"
+                android:textColor="@color/main_background"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/view"
+                app:layout_constraintTop_toBottomOf="@+id/tv_agent_description" />
+
+            <ImageButton
+                android:id="@+id/iv_ability_1"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="8dp"
+                android:background="?actionBarItemBackground"
+                android:scaleType="fitXY"
+                android:src="@drawable/mockup_abilities"
+                app:layout_constraintEnd_toStartOf="@+id/iv_ability_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_abilty" />
+
+            <ImageButton
+                android:id="@+id/iv_ability_2"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="8dp"
+                android:background="?actionBarItemBackground"
+                android:scaleType="fitXY"
+                android:src="@drawable/mockup_abilities"
+                app:layout_constraintEnd_toStartOf="@+id/iv_ability_3"
+                app:layout_constraintStart_toEndOf="@+id/iv_ability_1"
+
+                app:layout_constraintTop_toBottomOf="@+id/tv_abilty" />
+
+            <ImageButton
+                android:id="@+id/iv_ability_3"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="8dp"
+                android:background="?actionBarItemBackground"
+                android:scaleType="fitXY"
+                android:src="@drawable/mockup_abilities"
+                app:layout_constraintEnd_toStartOf="@+id/iv_ability_4"
+                app:layout_constraintStart_toEndOf="@+id/iv_ability_2"
+
+                app:layout_constraintTop_toBottomOf="@+id/tv_abilty" />
+
+            <ImageButton
+                android:id="@+id/iv_ability_4"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="8dp"
+                android:background="?actionBarItemBackground"
+                android:scaleType="fitXY"
+                android:src="@drawable/mockup_abilities"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_ability_3"
+
+                app:layout_constraintTop_toBottomOf="@+id/tv_abilty" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
