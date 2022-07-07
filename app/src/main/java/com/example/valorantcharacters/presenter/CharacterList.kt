@@ -21,9 +21,7 @@ class CharacterList : AppCompatActivity(), AgenteItemInferface {
 
     private var agentAdapter = AgentAdapter(Agent(), this)
 
-    private val mViewModel : AgentViewModel by viewModel {
-        parametersOf(AgentRepository(AgentImplementation()))
-    }
+    private val mViewModel : AgentViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
